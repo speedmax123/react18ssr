@@ -7,11 +7,12 @@
  */
 
 import * as React from "react";
-// import {renderToString} from 'react-dom/server';
+import {renderToString} from 'react-dom/server';
 import { renderToPipeableStream } from "react-dom/server";
 import App from "../src/App";
-import { DataProvider } from "../src/data";
-import { API_DELAY, ABORT_DELAY } from "./delays";
+import { DataProvider } from "../src/client_data";
+import { ABORT_DELAY } from "./delays";
+import { createServerData_sidebar, createServerData_home_sav, createServerData_home, createServerData_wallet } from './server_data';
 
 // In a real setup, you'd read it from webpack build stats.
 let assets = {
@@ -20,8 +21,13 @@ let assets = {
 };
 
 module.exports = function render(url, res) {
+  
   // This is how you would wire it up previously:
-  //
+  // const sb = createServerData_sidebar();
+  // const home = createServerData_home();
+  // const sav = createServerData_home_sav();
+  // const wallet = createServerData_wallet(res);
+  // const data = Promise.all(sb, home, sav, wallet, data);
   // res.send(
   //   '<!DOCTYPE html>' +
   //   renderToString(
@@ -36,9 +42,12 @@ module.exports = function render(url, res) {
     console.error("Fatal", error);
   });
   let didError = false;
-  const data = createServerData();
+  const sb = createServerData_sidebar();
+  const home = createServerData_home();
+  const sav = createServerData_home_sav();
+  const wallet = createServerData_wallet(res);
   const stream = renderToPipeableStream(
-    <DataProvider data={data}>
+    <DataProvider data={{ sb, home, sav, wallet }}>
       <App assets={assets} />
     </DataProvider>,
     {
@@ -59,29 +68,3 @@ module.exports = function render(url, res) {
   // Try lowering this to see the client recover.
   setTimeout(() => stream.abort(), ABORT_DELAY);
 };
-
-// Simulate a delay caused by data fetching.
-// We fake this because the streaming HTML renderer
-// is not yet integrated with real data fetching strategies.
-function createServerData() {
-  let done = false;
-  let promise = null;
-  return {
-    read() {
-      if (done) {
-        return;
-      }
-      if (promise) {
-        throw promise;
-      }
-      promise = new Promise((resolve) => {
-        setTimeout(() => {
-          done = true;
-          promise = null;
-          resolve();
-        }, API_DELAY);
-      });
-      throw promise;
-    }
-  };
-}

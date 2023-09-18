@@ -12,9 +12,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Sidebar; });
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _client_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./client_data */ "./src/client_data.js");
 
 
-var _jsxFileName = "/sandbox/src/Sidebar.js";
+var _jsxFileName = "/Users/junxu6/Documents/workspace/lab/react18ssr/src/Sidebar.js";
 
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -23,76 +24,54 @@ var _jsxFileName = "/sandbox/src/Sidebar.js";
  * LICENSE file in the root directory of this source tree.
  *
  */
+
 function Sidebar() {
+  var sidebar = Object(_client_data__WEBPACK_IMPORTED_MODULE_1__["useData_sidebar"])();
   return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
-    children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("h1", {
-      children: "Archive"
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 12,
-      columnNumber: 7
-    }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("ul", {
+    children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("ul", {
+      className: "list-group",
       children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("li", {
-        children: "May 2021"
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 14,
-        columnNumber: 9
-      }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("li", {
-        children: "April 2021"
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 15,
-        columnNumber: 9
-      }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("li", {
-        children: "March 2021"
+        className: "list-group-item disabled",
+        children: "Personal Info"
       }, void 0, false, {
         fileName: _jsxFileName,
         lineNumber: 16,
         columnNumber: 9
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("li", {
-        children: "February 2021"
+        className: "list-group-item",
+        children: "Payments"
       }, void 0, false, {
         fileName: _jsxFileName,
         lineNumber: 17,
         columnNumber: 9
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("li", {
-        children: "January 2021"
+        className: "list-group-item disabled",
+        children: "Account Preference"
       }, void 0, false, {
         fileName: _jsxFileName,
         lineNumber: 18,
         columnNumber: 9
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("li", {
-        children: "December 2020"
+        className: "list-group-item disabled",
+        children: "Selling"
       }, void 0, false, {
         fileName: _jsxFileName,
         lineNumber: 19,
         columnNumber: 9
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("li", {
-        children: "November 2020"
+        className: "list-group-item disabled",
+        children: "Donation Preference"
       }, void 0, false, {
         fileName: _jsxFileName,
         lineNumber: 20,
         columnNumber: 9
-      }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("li", {
-        children: "October 2020"
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 21,
-        columnNumber: 9
-      }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("li", {
-        children: "September 2020"
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 22,
-        columnNumber: 9
       }, this)]
     }, void 0, true, {
       fileName: _jsxFileName,
-      lineNumber: 13,
+      lineNumber: 15,
       columnNumber: 7
-    }, this)]
-  }, void 0, true);
+    }, this)
+  }, void 0, false);
 }
 
 /***/ })

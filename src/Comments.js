@@ -6,14 +6,14 @@
  *
  */
 
-import {useData} from './data';
+import {useData_home} from './client_data';
 
 export default function Comments() {
-  const comments = useData();
+  const comments = useData_home();
   return (
     <>
       {comments.map((comment, i) => (
-        <p className="comment" key={i}>
+        <p className="comment" key={i} onClick={() => alert('clickable')}>
           {comment}
         </p>
       ))}

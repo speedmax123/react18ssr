@@ -8,8 +8,18 @@
 
 export default function NavBar() {
   return (
-    <nav>
-      <a href="/">Home</a>
+    <nav className="nav-bar">
+      <ul className="nav nav-underline">
+      <li className="nav-item">
+        <a className="nav-link" href="#">Activity</a>
+      </li>
+      <li className="nav-item">
+        <a className="nav-link" href="#">Message</a>
+      </li>
+      <li className="nav-item">
+        <a className="nav-link active" aria-current="page" href="#">Account</a>
+      </li>
+    </ul>
     </nav>
   );
 }

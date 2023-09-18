@@ -22,17 +22,49 @@ export function DataProvider({children, data}) {
 // In a real implementation the data would be streamed with the HTML.
 // We haven't integrated this part yet, so we'll just use fake data.
 const fakeData = [
-  "Wait, it doesn't wait for React to load?",
-  'How does this even work?',
-  'I like marshmallows',
+  "Your account needs to be updated due to some issue.",
+  'Please review your annual 1099k.',
 ];
 
-export function useData() {
+export function useData_sidebar() {
   const ctx = useContext(DataContext);
   if (ctx !== null) {
     // This context is only provided on the server.
     // It is here to simulate a suspending data fetch.
-    ctx.read();
+    ctx.sb.read();
   }
   return fakeData;
+}
+
+export function useData_home() {
+  const ctx = useContext(DataContext);
+  if (ctx !== null) {
+    // This context is only provided on the server.
+    // It is here to simulate a suspending data fetch.
+    ctx.home.read();
+  }
+  return fakeData;
+}
+
+export function useData_sav() {
+  const ctx = useContext(DataContext);
+  if (ctx !== null) {
+    // This context is only provided on the server.
+    // It is here to simulate a suspending data fetch.
+    ctx.sav.read();
+  }
+  return fakeData;
+}
+
+export function useData_wallet() {
+  const ctx = useContext(DataContext);
+  if (ctx !== null) {
+    const wallet_data = ctx.wallet.read();
+    // server code
+    return wallet_data
+  }
+  // browser code
+  if (globalThis.window && window.__wallet__) {
+    return window.__wallet__;
+  }
 }
