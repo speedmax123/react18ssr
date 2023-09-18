@@ -81,6 +81,9 @@ const wallet_data = {
     { name: 'Amex ending in 0002', expire: 'Amex ending in 0002' },
   ]
 };
+const wallet_data_client = {
+  errorId: 100
+}
 export function createServerData_wallet(res) {
   let done = false;
   let promise = null;
@@ -97,7 +100,7 @@ export function createServerData_wallet(res) {
         setTimeout(() => {
           done = true;
           promise = null;
-          res.write(`<script>window.__wallet__ = ${JSON.stringify(wallet_data)}</script>`);
+          // res.write(`<script>window.__wallet__ = ${JSON.stringify(wallet_data)}</script>`);
           data = wallet_data;
           resolve();
         }, API_DELAY_NORMAL);

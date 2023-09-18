@@ -21,4 +21,4 @@ exports.API_DEPLAY_SLOWEST = 11000;
 exports.ABORT_DELAY = 15000;
 
 // How long serving the JS bundles is delayed.
-exports.JS_BUNDLE_DELAY = 3000;
+exports.JS_BUNDLE_DELAY = 100;
