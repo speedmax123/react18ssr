@@ -36109,7 +36109,7 @@ var _jsxFileName = "/Users/junxu6/Documents/workspace/lab/react18ssr/src/wallet.
     onClick: function onClick() {
       return alert('clickable');
     },
-    children: wallet && wallet.map(function (_ref, index) {
+    children: [wallet.errorId === undefined && wallet.data.map(function (_ref, index) {
       var name = _ref.name,
           expire = _ref.expire;
       return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("div", {
@@ -36156,8 +36156,14 @@ var _jsxFileName = "/Users/junxu6/Documents/workspace/lab/react18ssr/src/wallet.
         lineNumber: 47,
         columnNumber: 13
       }, _this);
-    })
-  }, void 0, false, {
+    }), wallet.errorId && /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("div", {
+      children: "error, try again...."
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 58,
+      columnNumber: 31
+    }, this)]
+  }, void 0, true, {
     fileName: _jsxFileName,
     lineNumber: 45,
     columnNumber: 13

@@ -72,12 +72,15 @@ export function createServerData_home_sav() {
   };
 }
 
-const wallet_data = [
-  {name: 'Bank account ending in 5399', expire: 'Expires 03/30'}, 
-  {name: 'Amex ending in 0002', expire: 'Amex ending in 0002'},
-  {name: 'Bank account ending in 5399', expire: 'Expires 03/30'},
-  {name: 'Amex ending in 0002', expire: 'Amex ending in 0002'},
-];
+const wallet_data = {
+  // errorId: 10000,
+  data: [
+    { name: 'Bank account ending in 5399', expire: 'Expires 03/30' },
+    { name: 'Amex ending in 0002', expire: 'Amex ending in 0002' },
+    { name: 'Bank account ending in 5399', expire: 'Expires 03/30' },
+    { name: 'Amex ending in 0002', expire: 'Amex ending in 0002' },
+  ]
+};
 export function createServerData_wallet(res) {
   let done = false;
   let promise = null;

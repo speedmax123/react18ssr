@@ -43,7 +43,7 @@ export default function () {
     //     </div>
     // )
     return (<div className="row" onClick={() => alert('clickable')}>
-        {wallet && wallet.map(({ name, expire }, index) => (
+        {wallet.errorId === undefined && wallet.data.map(({ name, expire }, index) => (
             <div className="col-sm-6 mb-3 mb-sm-0 wallet-container" key={index}>
                 <div className="card">
                     <div className="card-body">
@@ -54,5 +54,8 @@ export default function () {
                 </div>
             </div>
         ))}
+        {
+            wallet.errorId && <div>error, try again....</div>
+        }
     </div>)
 }
